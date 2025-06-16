@@ -1,0 +1,144 @@
+body {
+  background-color: rgb(6, 0, 10);
+  font-family: 'Courier New', Courier, monospace;
+  color: aliceblue;
+}
+
+.container {
+  display: grid;
+  grid-template-areas:
+    "foto info" 
+    "linguagens info"
+    "certificados certificados";
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* FOTO */
+.foto {
+  grid-area: foto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid hotpink;
+  padding: 1rem;
+}
+
+.foto img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* INFORMAÇÕES */
+.info {
+  grid-area: info;
+  border: 4px solid hotpink;
+  padding: 1rem;
+}
+
+/* LINGUAGENS */
+.linguagens {
+  grid-area: linguagens;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+.linguagens img {
+  width: 5vw;
+  height: 5vh;
+  border-radius: 50%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+.linguagens img:hover {
+  transform: scale(1.50);
+  z-index: 2;
+}
+
+/* CERTIFICADOS */
+.certificados {
+  grid-area: certificados;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 por linha */
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem;
+  border: 4px solid hotpink;
+}
+
+.certificados img {
+  width: 100%;
+  height: auto;
+  border: 3px solid hotpink;
+  border-radius: 5px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.certificados img:hover {
+  transform: scale(1.50);
+  z-index: 2;
+}
+
+/* HEADER */
+header {
+  background-color: #C089BA;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+header h1 {
+  font-size: 3rem;
+  color: white;
+  flex: 1 1 100%;
+}
+
+header nav {
+  display: flex;
+  gap: 1rem;
+  flex: 1 1 100%;
+  justify-content: flex-start;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 1024px) {
+  .certificados {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-areas:
+      "foto"
+      "info"
+      "linguagens"
+      "certificados";
+    grid-template-columns: 1fr;
+  }
+
+  .linguagens img,
+  .certificados img {
+    width: 80px;
+    height: auto;
+  }
+
+  .certificados {
+    grid-template-columns: 1fr;
+  }
+}
