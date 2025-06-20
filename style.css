@@ -24,7 +24,6 @@ header {
 header h1 {
   color: var(--azul-claro);
 }
-
 nav a {
   margin: 0 1rem;
   color: var(--rosa);
@@ -43,7 +42,11 @@ nav a:hover {
   background-color: #0a0f2c;
   border-radius: 10px;
 }
-
+div a {
+  margin: 0 1rem;
+  color: var(--rosa);
+  text-decoration: none;
+}
 .card {
   background-color: #101836;
   border: 1px solid var(--rosa);
